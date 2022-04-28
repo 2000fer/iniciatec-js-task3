@@ -1,0 +1,20 @@
+html,body{
+    height: 100%;
+}
+
+nav, footer{
+    height: 8%;
+    font-size: 1.4rem;
+}
+
+header h1{
+    font-size: 4rem;
+}
+
+header img{
+    height: 5rem;
+}
+
+header a{
+    font-size: 1.4rem;
+}

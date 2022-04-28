@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Party Loyalty</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+    
+    <body class="d-flex flex-wrap align-content-start">
+
+        <header class="container-fluid p-4 d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center">
+            <img src="img/logo.png" class="m-1 p-1">
+            <h1>Data Insight Group Logo</h1>
+          </div>
+          
+          <a href="mailto:info@datainsightgroup.net">info@datainsightgroup.net</a>
+        </header>
+
+        <nav class="navbar navbar-expand-sm navbar-light bg-light w-100 m-2 border border-dark">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo01">                
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">                  
+                  <li class="nav-item">
+                    <a class="nav-link active text-primary" aria-current="page" href="index.html">Home</a>
+                  </li>
+                                  
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-primary" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Congress 113
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-light border border-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                      <li><a class="dropdown-item" href="house.html">House</a></li>
+                      <li><a class="dropdown-item" href="senate.html">Senate</a></li>                      
+                    </ul>
+                  </li>
+                  
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-primary" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Attendance
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-light border border-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                      <li><a class="dropdown-item" href="house-attendance.html">House</a></li>
+                      <li><a class="dropdown-item" href="senate-attendance.html">Senate</a></li>                      
+                    </ul>
+                  </li>
+
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-primary" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Party Loyalty
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-light border border-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                      <li><a class="dropdown-item" href="house-party-loyalty.html">House</a></li>
+                      <li><a class="dropdown-item" href="senate-party-loyalty.html">Senate</a></li>                      
+                    </ul>
+                  </li>
+
+                </ul>                                
+              </div>
+
+            </div>
+          </nav>
+
+      
+        <main class="d-flex p-4 flex-wrap w-100">
+
+        <!-- Bloque attendance y primer tabla -->        
+          <div class="d-flex w-100 justify-content-between">
+            <!-- Bloque texto-->
+            <div class="w-50 mx-2">
+                <h2>Party Loyalty</h2>
+                <p>Those who consider themselves to be strong partisans, strong Democrats and strong Republicans respectively, tend to be the most faithful in voting for their party's nominee for office and legislation that backs their party's agenda. </p>               
+            </div>
+        
+            <!-- Tabla senate at a glance -->
+            <div class="w-50 mx-3">
+                <h2 class="text-end">House at a glance</h2>
+                <table id="tableAtAGlance" class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Party</th>
+                            <th>Number of Reps</th>
+                            <th>% Voted with Prty</th>
+                        </tr>
+                    </thead>                   
+                </table>
+            </div>
+
+          </div>
+
+        <!-- Segundo bloque de tablas -->
+         <div class="d-flex w-100 border-top mt-4 pt-4 justify-content-between">
+
+            <!-- Primer tabla -->
+            <div class="w-50 mx-2">
+                <h2>Least Loyal (Bottom 10% of Party)</h2>
+                <table id="leastLoyal" class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Number Party Votes</th>
+                            <th>% Party Votes</th>
+                        </tr>
+                    </thead>                   
+                </table>
+            </div>
+
+            <!-- Segunda tabla -->
+            <div class="w-50 mx-2">
+                <h2>Most Loyal (Top 10% of Party)</h2>
+                <table  id="mostLoyal" class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Number Party Votes</th>
+                            <th>% Party Votes</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+
+
+         </div>
+
+
+        </main>
+                        
+        <footer class="m-2 py-4 bg-light border border-dark w-100 align-self-end d-flex align-items-center">
+          <div class="container text-center">
+            <small> &copy; 2021 Data insight group | All rights reserved</small>
+          </div>
+        </footer>
+
+
+        <script> 
+            let statistics = {
+                "democrats":{
+                    "qty":"",
+                    "averagePercentPartyVotes":"",
+                },
+  
+                "republicans":{
+                    "qty":"",
+                    "averagePercentPartyVotes":"",
+                },
+  
+                "independents":{
+                    "qty":"",
+                    "averagePercentPartyVotes":"",
+                },
+  
+                "qtyTotal":"",
+                "leastLoyal":[],
+                "mostLoyal":[],
+                "leastEngaged":[],
+                "mostEngaged":[],
+            } 
+  
+          </script>
+        <script src="pro-congress-113-house.js"></script>
+        <script src="main.js"></script>
+        <script src="statistics-script.js"></script>      
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </body>
+</html>
